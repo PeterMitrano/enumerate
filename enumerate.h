@@ -1,7 +1,6 @@
 #include <utility>
 #include <vector>
 #include <algorithm>
-#include <iostream>
 
 template <typename T>
 struct i_and_val_t {
