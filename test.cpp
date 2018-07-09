@@ -1,3 +1,4 @@
+#include <string>
 #include <vector>
 #include <iostream>
 
@@ -6,8 +7,8 @@
 using namespace enmr;
 
 int main() {
-     std::vector<std::string> v = {"hi", "I", "am", "bob"};
-     for (auto [i, value]: enumerate(v)) {
+     std::vector<std::string> v{"hi", "I", "am", "bob"};
+     for (auto [i, value]: enumerate(v.begin(), v.end())) {
          std::cout << i << ", " << value << '\n';
      }
 
