@@ -2,22 +2,18 @@
 #include <vector>
 #include <algorithm>
 
-template <typename T>
-struct i_and_val_t {
-    size_t i = 0;
-    T t;
-};
+namespace enmr {
 
 template <typename T>
 struct enumerate {
 
     enumerate(std::vector<T> container) {
         size_t i = 0;
-        auto lambda = [&i] (auto item) auto {
+        auto make_pair = [&i] (auto item) auto {
             return std::make_pair(i++, item);
         };
         internal_container.resize(container.size());
-        std::transform(container.begin(), container.end(), internal_container.begin(), lambda);
+        std::transform(container.begin(), container.end(), internal_container.begin(), make_pair);
     }
 
     auto begin() {
@@ -30,3 +26,5 @@ struct enumerate {
 
     std::vector<std::pair<size_t, T>> internal_container;
 };
+
+} // Namespace enmr
