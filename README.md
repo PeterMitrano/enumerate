@@ -21,7 +21,8 @@
 
     # Output
     ~/Projects/enumerate (master) $ ./a.out
-    0, 1
-    1, 2
-    2, 3
+    0, "hi"
+    1, "I"
+    2, "am"
+    3, "bob"
 
